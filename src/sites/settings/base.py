@@ -6,10 +6,9 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.pa
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '8u1$r$wobap8_hkf-ec-4u(a%!4o0m^$r)s45krel57g33try+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -52,7 +51,6 @@ TEMPLATES = [
 ]
 
 # Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
