@@ -1,10 +1,13 @@
 import os
 
+from libs.secrets import Secrets
+from libs.secrets.constants import SecretKey
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8u1$r$wobap8_hkf-ec-4u(a%!4o0m^$r)s45krel57g33try+'
+SECRET_KEY = Secrets.get(SecretKey.SECRET_KEY)
 
 DEBUG = False
 
