@@ -6,10 +6,23 @@ from libs.secrets.exceptions import ImproperlyConfigured
 
 
 class SecretHandler:
-    def __init__(self, root_path: str):
-        self._root_path = root_path
+    _instance = None
+
+    def __init__(self):
+        self._root_path = self._get_root_path()
         self._secrets = {}
         self._load()
+
+    @classmethod
+    def instance(cls) -> 'SecretHandler':
+        if cls._instance is None:
+            cls._instance = cls()
+        return cls._instance
+
+    @staticmethod
+    def _get_root_path() -> str:
+        # 파일 위치가 변경되면 아래 경로도 변경 해야 한다.
+        return os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../../'))
 
     def get(self, key: str) -> str:
         try:
