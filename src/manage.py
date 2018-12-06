@@ -3,8 +3,8 @@
 import os
 import sys
 
-from libs.secrets import Secrets
 from libs.secrets.constants import SecretKey
+from libs.secrets.secrets import Secrets
 
 if __name__ == "__main__":
     # copy system arguments
