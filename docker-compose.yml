@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  bootstrap-django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - .:/htdocs/www
+    command: ["make", "docker-cmd"]
