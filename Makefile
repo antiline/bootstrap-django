@@ -11,6 +11,11 @@ docker-cmd: settings runserver
 settings:
 	@cd src && python3.6 -m scripts.generate_secret -a default
 
+cert:
+	@cd docs/dev/cert \
+	&& openssl req -new -newkey rsa:2048 -nodes -keyout dev.key -out dev.csr -subj "/C=KR/ST=Seoul/L=Gang-nam/O=SecureSign Inc/OU=Dev Team/CN=example.com" \
+	&& openssl x509 -req -days 3650 -in dev.csr -signkey dev.key -out dev.crt
+
 
 # run
 runserver:

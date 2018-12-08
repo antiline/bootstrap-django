@@ -106,8 +106,5 @@ venv.bak/
 # IDE
 .idea/
 
-# database
-db.sqlite3
-
 # config
 secrets.json

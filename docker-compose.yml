@@ -9,3 +9,17 @@ services:
     volumes:
       - .:/htdocs/www
     command: ["make", "docker-cmd"]
+
+  bootstrap-django-nginx:
+    image: nginx:stable
+    restart: always
+    volumes:
+      - ./docs/dev/nginx:/etc/nginx/conf.d:ro
+      - ./docs/dev/cert:/etc/nginx/cert/:ro
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - bootstrap-django
+    links:
+      - bootstrap-django
