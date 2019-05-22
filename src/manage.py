@@ -3,7 +3,7 @@
 import os
 import sys
 
-from libs.secrets.constants import SecretKey
+from infras.secrets.constants import SecretKey
 from libs.secrets.secrets import Secrets
 
 if __name__ == "__main__":

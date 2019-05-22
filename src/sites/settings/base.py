@@ -1,6 +1,6 @@
 import os
 
-from libs.secrets.constants import SecretKey
+from infras.secrets.constants import SecretKey
 from libs.secrets.secrets import Secrets
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
