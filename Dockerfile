@@ -12,4 +12,4 @@ EXPOSE 8000
 
 ADD Pipfile /htdocs/www
 ADD Pipfile.lock /htdocs/www
-RUN pipenv install --system --deploy --dev
+RUN pipenv install --dev
