@@ -18,6 +18,7 @@ cert:
 
 package-install:
 	@pipenv install --dev
+	@pipenv update --dev
 
 # run
 runserver:
@@ -32,3 +33,9 @@ test:
 # docker
 docker-up:
 	@docker-compose up
+
+docker-rebuild-up:
+	@docker-compose up --force-recreate --build
+
+docker-kill-all:
+	@docker ps -a -q | xargs docker rm -f
