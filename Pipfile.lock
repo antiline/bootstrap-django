@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ca61f7a9b3d02b9f74315aa6cf70a57626df466ba73c87c33218f0f21535d137"
+            "sha256": "45fbfc7f93b5f3eeaf5d65e3605247cba92dd209abe93812fbe529ec064b991c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -24,12 +24,14 @@
             "index": "pypi",
             "version": "==2.2.1"
         },
-        "django-ipware": {
+        "mysqlclient": {
             "hashes": [
-                "sha256:a7c7a8fd019dbdc9c357e6e582f65034e897572fc79a7e467674efa8aef9d00b"
+                "sha256:425e733b05e359a714d6007c0fc44582be66b63e5a3df0a50949274ae16f4bc6",
+                "sha256:62e4770b6a797b9416bcf70488365b7d6b9c9066878108499c559293bb464380",
+                "sha256:f257d250f2675d0ef99bd318906f3cfc05cef4a2f385ea695ff32a3f04b9f9a7"
             ],
             "index": "pypi",
-            "version": "==2.1.0"
+            "version": "==1.4.2.post1"
         },
         "pycrypto": {
             "hashes": [
