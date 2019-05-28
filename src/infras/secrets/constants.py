@@ -24,6 +24,12 @@ class SecretKey(BaseConstant):
 
     SECRET_KEY = 'secret_key'
 
+    WRITE_DB_NAME = 'write_db_name'
+    WRITE_DB_HOST = 'write_db_host'
+    WRITE_DB_PORT = 'write_db_port'
+    WRITE_DB_USER = 'write_user'
+    WRITE_DB_PASSWORD = 'write_password'
+
     _LIST = (ENVIRONMENT, SECRET_KEY,)
     _STRING_MAP = {
         ENVIRONMENT: 'environment',

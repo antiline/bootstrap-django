@@ -57,11 +57,14 @@ TEMPLATES = [
 ]
 
 # Database
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(ROOT_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': Secrets.get(SecretKey.WRITE_DB_NAME),
+        'USER': Secrets.get(SecretKey.WRITE_DB_USER),
+        'PASSWORD': Secrets.get(SecretKey.WRITE_DB_PASSWORD),
+        'HOST': Secrets.get(SecretKey.WRITE_DB_HOST),
+        'PORT': Secrets.get(SecretKey.WRITE_DB_PORT),
     }
 }
 
