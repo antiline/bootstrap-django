@@ -97,6 +97,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Security
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+X_FRAME_OPTIONS = 'DENY'
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
