@@ -7,10 +7,12 @@ from libs.log.logger import logger
 class CommonBaseCommand(BaseCommand):
     title = 'No title'
 
-    def log_error(self, msg: str) -> None:
+    @staticmethod
+    def log_error(msg: str) -> None:
         logger.error(msg)
 
-    def log_info(self, msg: str) -> None:
+    @staticmethod
+    def log_info(msg: str) -> None:
         logger.info(msg)
 
     def handle(self, *args, **options) -> None:
