@@ -9,6 +9,9 @@ docker-cmd: package-install settings runserver
 
 # install
 settings:
+	@pipenv run make settings-internal
+
+settings-internal:
 	@cd src && python -m scripts.generate_secret -a default
 
 cert:
@@ -22,7 +25,7 @@ package-install:
 
 # run
 runserver:
-	@pipenv run python src/manage.py runserver 0.0.0.0:8000
+	pipenv run python src/manage.py runserver 0.0.0.0:8000
 
 
 # test

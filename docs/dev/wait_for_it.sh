@@ -5,7 +5,7 @@ shift
 command="$@"
 
 while true; do
-    $check_command
+    $check_command &> /dev/null
     if [ $? -eq 0 ]; then
         break
     fi
