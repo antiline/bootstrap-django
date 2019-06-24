@@ -108,6 +108,7 @@ venv.bak/
 
 # config
 secrets.json
+.secrets.json
 
 # temp
 .tmp
