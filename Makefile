@@ -36,7 +36,7 @@ run-server:
 	@pipenv run python src/manage.py runserver 0.0.0.0:8000
 
 run-uwsgi:
-	@pipenv run uwsgi --ini /htdocs/www/docs/uwsgi/bootstrap-django.ini
+	@pipenv run uwsgi --ini /htdocs/www/docs/uwsgi/bootstrap-django.ini --import infras.crontab
 
 
 # test
