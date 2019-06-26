@@ -10,6 +10,7 @@ mysqlclient = "*"
 django-ipware = "*"
 django-cors-headers = "*"
 uwsgi = "*"
+filelock = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
