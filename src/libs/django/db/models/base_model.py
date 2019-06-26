@@ -29,8 +29,8 @@ class EqualizeMixin:
 
 
 class BaseModel(EqualizeMixin, models.Model):
-    created = models.DateTimeField(auto_now_add=True, editable=False, verbose_name='등록일')
-    last_modified = models.DateTimeField(auto_now=True, verbose_name='수정일')
+    create_time = models.DateTimeField(auto_now_add=True, editable=False, verbose_name='등록일')
+    update_time = models.DateTimeField(auto_now=True, verbose_name='수정일')
 
     objects = Manager()
 
