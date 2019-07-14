@@ -1,4 +1,10 @@
+import logging
 import os
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.excepthook import ExcepthookIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
 
 from infras.secrets.constants import SecretKey
 from libs.secrets.secrets import Secrets
@@ -123,3 +129,10 @@ RESTRICTED_APP_NAMES = ['admin', ]
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/src', ),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/dist')
+
+# Sentry
+
+sentry_sdk.init(
+    dsn=Secrets.get(SecretKey.SENTRY_DSN),
+    integrations=[DjangoIntegration(), ExcepthookIntegration(always_run=True), LoggingIntegration(logging.INFO, logging.ERROR), ]
+)
