@@ -43,6 +43,10 @@ run-uwsgi:
 test:
 	@pipenv run python src/manage.py test src --noinput
 
+# pre-processing
+lint:
+	@pipenv run pylint ./src/ --rcfile=.pylintrc
+	@pipenv run flake8
 
 # docker
 docker-up:

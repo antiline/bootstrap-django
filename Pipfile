@@ -13,6 +13,8 @@ uwsgi = "*"
 filelock = "*"
 django-admin-ip-restrictor = "*"
 sentry-sdk = "*"
+pylint = "*"
+flake8 = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"

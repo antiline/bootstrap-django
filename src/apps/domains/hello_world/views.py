@@ -3,5 +3,6 @@ from django.views import View
 
 
 class HelloWorldView(View):
-    def get(self, request):
+    @staticmethod
+    def get(request):
         return render(request, 'hello_world/index.html', {})
