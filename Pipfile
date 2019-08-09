@@ -15,6 +15,7 @@ django-admin-ip-restrictor = "*"
 sentry-sdk = "*"
 pylint = "*"
 flake8 = "*"
+django-csp = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
