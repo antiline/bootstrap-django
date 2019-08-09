@@ -17,8 +17,8 @@ settings-internal:
 
 cert:
 	@cd docs/dev/cert \
-	&& openssl req -new -newkey rsa:2048 -nodes -keyout dev.key -out dev.csr -subj "/C=KR/ST=Seoul/L=Gang-nam/O=SecureSign Inc/OU=Dev Team/CN=example.com" \
-	&& openssl x509 -req -days 3650 -in dev.csr -signkey dev.key -out dev.crt
+	&& openssl req -new -newkey rsa:2048 -sha512 -nodes -keyout dev.key -out dev.csr -subj "/C=KR/ST=Seoul/L=Gang-nam/O=SecureSign Inc/OU=Dev Team/CN=example.com" \
+	&& openssl x509 -req -days 3650 -sha512 -in dev.csr -signkey dev.key -out dev.crt
 
 install-mysql:
 	@apt update && apt install -y mysql-server default-libmysqlclient-dev
