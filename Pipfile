@@ -16,6 +16,7 @@ sentry-sdk = "*"
 pylint = "*"
 flake8 = "*"
 django-csp = "*"
+gunicorn = {extras = ["gevent"],version = "*"}
 
 [dev-packages]
 django-debug-toolbar = "*"

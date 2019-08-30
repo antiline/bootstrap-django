@@ -4,11 +4,14 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 # docker
-docker-cmd: install-package settings collect-static run-server
-docker-uwsgi-cmd: install-mysql install-package collect-static run-uwsgi
+docker-cmd: install-all run-server
+docker-uwsgi-cmd: install-all run-uwsgi
+docker-gunicorn-cmd: install-all run-gunicorn
 
 
 # install
+install-all: install-package settings collect-static
+
 settings:
 	@pipenv run make settings-internal
 
@@ -36,8 +39,10 @@ run-server:
 	@pipenv run python src/manage.py runserver 0.0.0.0:8000
 
 run-uwsgi:
-	@pipenv run uwsgi --ini /htdocs/www/docs/uwsgi/bootstrap-django.ini --import infras.crontab
+	@pipenv run uwsgi --ini /htdocs/www/docs/wsgi/uwsgi/bootstrap-django.ini --import infras.crontab
 
+run-gunicorn:
+	@pipenv run gunicorn -c /htdocs/www/docs/wsgi/gunicorn/bootstrap-django.py sites.wsgi:application
 
 # test
 test:
